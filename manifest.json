@@ -1,0 +1,9 @@
+{
+  "fxVersion": "cerulean",
+  "games": ["gta5"],
+  "scripts": {
+    "shared": ["shared/main.lua"],
+    "server": ["server/main.lua"],
+    "client": ["client/main.lua"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "cfx-lua-boilerplate",
+  "scripts": {
+    "dev": "node script.js",
+    "build": "node script.js --mode=production",
+  },
+  "author": "",
+  "devDependencies": {
+    "chokidar": "^3.5.3",
+    "dotenv": "^16.3.1",
+    "rcon": "^1.1.0"
+  }
+}
