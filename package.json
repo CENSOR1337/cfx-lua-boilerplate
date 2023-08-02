@@ -2,7 +2,7 @@
   "name": "cfx-lua-boilerplate",
   "scripts": {
     "dev": "node script.js",
-    "build": "node script.js --mode=production",
+    "build": "node script.js --mode=production"
   },
   "author": "",
   "devDependencies": {
