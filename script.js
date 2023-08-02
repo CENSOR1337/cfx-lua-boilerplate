@@ -76,17 +76,20 @@ async function build() {
         fs.writeFileSync(`./dist/${script.name}.lua`, script.content);
     }
 
+    for (const scripts of [sharedScripts, serverScripts, clientScripts]) {
+        const newScripts = [];
+        for (const script of scripts) {
+            if (script.includes("@")){
+                newScripts.push(script);
+            }
+        }
+        scripts.length = 0;
+        newScripts.forEach(script => scripts.push(script));
+    }
+
     sharedScripts.push("dist/shared.lua");
     serverScripts.push("dist/server.lua");
     clientScripts.push("dist/client.lua");
-
-    for (const scripts of [sharedScripts, serverScripts, clientScripts]) {
-        for (const script of scripts) {
-            if (script.startsWith("@")) continue;
-            const index = scripts.indexOf(script);
-            scripts.splice(index, 1);
-        }
-    }
 
     let fxManifest = `fx_version '${fxVersion}'\n`;
     fxManifest += `games {${games.map(game => ` "${game}" `).join(',')}}\n`;
